@@ -1,0 +1,308 @@
+:root {
+    --colMainBkg: #232323;
+    --colMainBkgTransparent: #23232356;
+    --colMainText: #ffffff;
+    --colMainClickable: rgba(255, 255, 255, 0.63);
+
+    --colSecondaryBkg: #37373b;
+    --colEndBkg: #000000;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--colMainBkg);
+}
+
+* {
+    box-sizing: border-box;
+    /*border: 5px solid red;*/
+}
+
+canvas {
+    max-width: 100%;
+    max-height: 100%;
+
+    background: var(--colMainBkg);
+}
+
+/* MAIN SCREEN */
+
+.mainTrack {
+    height: 100vh;
+    width: 100%;
+
+    max-height: 100vh;
+    max-width: 100vw;
+
+    background-color: var(--colMainBkg);
+
+    vertical-align: middle;
+}
+
+.mainBkg {
+    position: absolute;
+
+    padding: 10px;
+
+    height: 100vh;
+    width: 100%;
+}
+
+.secondaryBkg {
+    position: fixed;
+
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+
+    height: 100vh;
+    width: 100%;
+
+    z-index: 0;
+}
+
+.secondaryBkg canvas {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+
+    height: 100vh;
+    width: 100%;
+}
+
+.mainInfo {
+    height: 100%;
+    width: 100%;
+
+    color: var(--colMainText);
+
+    vertical-align: middle;
+
+    position: absolute;
+
+    padding: 10% 10% 40% 10%;
+}
+
+.mainInfo h1 {
+    font-size: 3em;
+}
+
+.mainInfo h3 {
+    font-size: 1em;
+}
+
+.mainSelector {
+    height: 100%;
+    width: 100%;
+
+    color: var(--colMainClickable);
+
+    position: absolute;
+    
+    padding: 50vh 10% 10% 10%;
+
+    vertical-align: middle;
+    text-align: right;
+}
+
+.mainSelector  a {
+    color: var(--colMainClickable);
+
+    text-decoration: none;
+
+    font-size: 1.5em;
+    letter-spacing: 0.2em;
+    word-spacing: 0.3em;
+    line-height: 2em;
+
+    transition: 200ms ease;
+}
+
+.mainSelector a:hover {
+    letter-spacing: 0.4em;
+    word-spacing: 0.5em;
+}
+
+/* MAIN body */
+
+.mainDiv {
+    position: absolute;
+
+    text-align: center;
+
+    background: #fff0;
+
+    color: var(--colMainText);
+    padding: 10%;
+
+    z-index: 100;
+}
+
+.mainDiv h1 {
+    color: var(--colMainText);
+    font-size: 3em;
+    padding: 5%;
+
+    margin: 0px;
+}
+
+.imgDiv {
+    display: inline-block;
+
+    margin: 5% auto;
+
+    max-width: 100%;
+    padding: 0px;
+
+
+
+    max-height: 90vh;
+
+    border-radius: 50px;
+    overflow: hidden;
+
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.imgDiv img {
+    height: 90vh;
+}
+
+.imgBKG {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--colMainText);
+    background-color: var(--colMainBkgTransparent);
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 400ms ease-out;
+    -moz-transition: all 400ms ease-out;
+    -o-transition: all 400ms ease-out;
+    -ms-transition: all 400ms ease-out;
+    transition: all 400ms ease-out;
+    text-align: center;
+}
+
+.imgDiv .imgBKG .imgInside {
+    height: 100%;
+    
+    opacity: 1;
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+}
+
+.imgDiv .imgBKG:hover {
+    opacity: 1;
+}
+
+.imgDiv .imgBKG:hover .imgInside {
+    opacity: 1;
+    transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+}
+
+/* TOPBAR */
+
+#Topbar {
+    position: relative;
+
+    background: var(--colMainBkg);
+
+    min-height: 3em;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+#Topbar a.h1 {
+    color: var(--colMainText);
+    font-size: 2.5em;
+
+    padding: 0px;
+    padding-left: 2em;
+    margin: 0px;
+
+    float: left;
+}
+
+#Topbar a {
+    color: var(--colMainClickable);
+    font-size: 1em;
+
+    padding: 10px;
+    margin: 0px;
+
+    text-decoration: none;
+
+    text-align: center;
+    float: right;
+
+    padding-top: 2em;
+}
+
+#Topbar a:hover {
+    color: var(--colMainText);
+}
+
+/* MAPS */
+
+.mainMap {
+    width: 80%;
+    height: 50vh;
+}
+
+@media screen and (min-width: 900px) {
+
+    .mainInfo {
+        position: absolute;
+
+        padding: 10% 40% 10% 10%;
+    }
+
+    .mainInfo h1 {
+        font-size: 5em;
+    }
+
+    .mainSelector {
+        position: absolute;
+    
+        padding: 10% 5% 10% 60%;
+    
+        vertical-align: middle;
+        text-align: right;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .mainInfo {
+        position: absolute;
+
+        padding: 10% 50% 10% 10%;
+    }
+
+    .mainInfo h1 {
+        font-size: 2em;
+    }
+
+    .mainSelector {
+        padding: 15% 10% 10% 10%;
+    }
+
+    .mainSelector  a {
+        font-size: 1em;
+        letter-spacing: 0.1em;
+        word-spacing: 0.2em;
+        line-height: 1.5em;
+    }
+    
+    .mainSelector a:hover {
+        letter-spacing: 0.2em;
+        word-spacing: 0.3em;
+    }
+}
